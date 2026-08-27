@@ -1,0 +1,23 @@
+{
+  "skill_name": "wesdon-site-pub",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "将 /tmp/wesdon-v3 下已审核的 12 篇 Markdown 发布到官网。先检查是否重名，确认无误后再发布。当前项目有 .siteconf。",
+      "expected_output": "先使用当前目录 .siteconf 覆盖全局配置，执行预演并在获得发布授权后创建文章；报告冲突检查和每篇公开 URL。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "帮我看下 ~/Desktop/官网稿件 是否能发到卫斯顿官网，不要真的发布。",
+      "expected_output": "只执行 dry-run，检查 Markdown、配置和标题/Slug 冲突，不创建任何线上文章。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "重新部署 wesdon-site，顺便把历史文章全部导入。",
+      "expected_output": "不触发本技能的文章发布流程；指出部署与历史导入是独立的高风险操作，需要分别授权。",
+      "files": []
+    }
+  ]
+}

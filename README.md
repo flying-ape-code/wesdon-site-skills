@@ -8,6 +8,7 @@
 - `wesdon-site-release`：既有站点更新、灰度、验收与回滚记录。
 - `wesdon-site-inspection`：只读巡检、备份检查和企业微信智能表格同步。
 - `wesdon-site-retirement`：经明确授权的客户站点下线与删除。
+- `wesdon-site-pub`：经审核 Markdown 官网文章的预演、发布与公开页验证。
 
 ## 安装
 
