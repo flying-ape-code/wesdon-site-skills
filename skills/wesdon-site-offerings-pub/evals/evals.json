@@ -1,0 +1,23 @@
+{
+  "skill_name": "wesdon-site-offerings-pub",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "将 /tmp/offerings 下已审核的 3 项产品和 2 项服务发布到官网；每项是含前置元数据的 Markdown。先检查，不要覆盖既有内容，确认无误后再发布。当前项目有 .siteconf。",
+      "expected_output": "先执行 dry-run，检查源稿、同类型 Slug 与既有项目；取得明确发布授权后才创建，并验证已发布的产品和服务公开页。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "帮我看一下 Desktop/服务资料 能不能上官网，先别发布。",
+      "expected_output": "只预演，解析服务源稿并检查 CMS 中同类型 Slug；不得创建任何产品或服务。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "新站上线时顺便跑 content:import-offerings，再把服务列表更新掉。",
+      "expected_output": "不把导入或部署混入本技能；说明它们需要独立的内容迁移和发布授权。",
+      "files": []
+    }
+  ]
+}
