@@ -4,19 +4,37 @@
     {
       "id": 1,
       "prompt": "将 /tmp/wesdon-v3 下已审核的 12 篇 Markdown 发布到官网。先检查是否重名，确认无误后再发布。当前项目有 .siteconf。",
-      "expected_output": "先使用当前目录 .siteconf 覆盖全局配置，执行预演并在获得发布授权后创建文章；报告冲突检查和每篇公开 URL。",
+      "expected_output": "准备并保存完整英文 Slug 映射，展示供确认；使用当前目录 .siteconf 覆盖全局配置，预演和发布均传入同一映射，在映射和发布均获确认后创建文章；报告冲突检查和每篇公开 URL。",
       "files": []
     },
     {
       "id": 2,
       "prompt": "帮我看下 ~/Desktop/官网稿件 是否能发到卫斯顿官网，不要真的发布。",
-      "expected_output": "只执行 dry-run，检查 Markdown、配置和标题/Slug 冲突，不创建任何线上文章。",
+      "expected_output": "缺少映射时根据标题生成英文 Slug 并保存至源目录 slug-map.json，展示映射；仅使用该映射执行 dry-run，检查 Markdown、配置和标题/Slug 冲突，不创建线上文章。",
       "files": []
     },
     {
       "id": 3,
       "prompt": "重新部署 wesdon-site，顺便把历史文章全部导入。",
       "expected_output": "不触发本技能的文章发布流程；指出部署与历史导入是独立的高风险操作，需要分别授权。",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "预检 /tmp/articles 中的中文稿件，不发布；该目录没有 slug-map.json。标题是《企业如何建设 AI 知识库》和《AI 客服如何降低人工成本》。",
+      "expected_output": "由 Codex 根据标题生成简短英文 Slug，保存文件名到 Slug 的完整 JSON 映射，展示标题和 Slug；预演显式传入该文件。无需翻译 API 密钥，不使用 article-01 等编号，不发布。",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "上次已保存 /tmp/articles/slug-map.json，这次增加了一篇排序更靠前的稿件。请重新预检，不发布。",
+      "expected_output": "先读取并保留已有映射，只为新增稿件生成英文 Slug；核对完整性、格式及冲突后持久保存，显式传给 dry-run。不因排序变化重生成旧 Slug。",
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "用 /tmp/reviewed-slug-map.json 预检 /tmp/articles。文件里的两个 Slug 相同，直接加个随机编号继续就行。",
+      "expected_output": "发现重复 Slug 后停止并报告，请用户确认语义化修订方案；不静默覆盖已确认映射、不自动加随机后缀，也不发布。",
       "files": []
     }
   ]
