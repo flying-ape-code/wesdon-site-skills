@@ -105,7 +105,7 @@ seoDescription: 面向企业团队的 AI 落地诊断服务。
 先预演：
 
 ```bash
-node /Users/yansunbin/.agents/skills/wesdon-site-offerings-pub/scripts/publish-offerings.mjs \
+node ~/.workbuddy/skills/wesdon-site-offerings-pub/scripts/publish-offerings.mjs \
   --source "/absolute/path/to/offerings-directory" \
   --dry-run
 ```
@@ -113,7 +113,7 @@ node /Users/yansunbin/.agents/skills/wesdon-site-offerings-pub/scripts/publish-o
 确认预演无问题且取得发布授权后：
 
 ```bash
-node /Users/yansunbin/.agents/skills/wesdon-site-offerings-pub/scripts/publish-offerings.mjs \
+node ~/.workbuddy/skills/wesdon-site-offerings-pub/scripts/publish-offerings.mjs \
   --source "/absolute/path/to/offerings-directory" \
   --publish
 ```
@@ -127,7 +127,7 @@ node /Users/yansunbin/.agents/skills/wesdon-site-offerings-pub/scripts/publish-o
 修改脚本后运行：
 
 ```bash
-node --test /Users/yansunbin/.agents/skills/wesdon-site-offerings-pub/tests/publish-offerings.test.mjs
+node --test ~/.workbuddy/skills/wesdon-site-offerings-pub/tests/publish-offerings.test.mjs
 ```
 
 测试用例位于 `evals/evals.json`，覆盖配置合并、Markdown 解析、同类型冲突阻断和公开页验证。
